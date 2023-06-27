@@ -1,0 +1,8 @@
+*.*
+
+!*.ts
+!*.js
+!*.html
+
+build
+node_modules

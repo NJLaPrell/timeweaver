@@ -1,3 +1,12 @@
+server/build
+server/.env
+.env.dev
+.env.prod
+.env
+.DS_Store
+certs/*
+!certs/ssl.sh
+
 # Logs
 logs
 *.log
