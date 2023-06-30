@@ -1,0 +1,41 @@
+{
+  "id": "org_12345",
+  "name": "Apple Inc.",
+  "objectType": "Company",
+  "description": "American multinational technology company that specializes in consumer electronics, computer software, and online services.",
+  "founding_members": ["Steve Jobs", "Steve Wozniak", "Ronald Wayne"],
+  "linkedElements": [
+    {
+      "id": "person_456",
+      "linkLabel": "Co-founder",
+      "name": "Steve Jobs",
+      "title": "Co-founder of Apple",
+      "description": "Co-founder of Apple Inc. and Pixar",
+      "objectType": "Person",
+      "location": null
+    },
+    {
+      "id": "event_123",
+      "linkLabel": "Founded during",
+      "name": "Apple Incorporation",
+      "title": "Apple Incorporation",
+      "description": "Steve Jobs and Steve Wozniak incorporate Apple Computer, Inc.",
+      "objectType": "Event",
+      "location": null
+    },
+    {
+      "id": "loc_678",
+      "linkLabel": "Headquartered in",
+      "name": "Cupertino, California",
+      "title": "City of Cupertino",
+      "description": "City in California, USA",
+      "objectType": "Location",
+      "location": {
+        "lat": 37.3229978,
+        "long": -122.0321823
+      }
+    }
+  ],
+  "media_links": ["https://commons.wikimedia.org/wiki/File:Apple_Park_cupertino_2019.jpg"],
+  "citations": ["https://www.apple.com/about/"]
+}

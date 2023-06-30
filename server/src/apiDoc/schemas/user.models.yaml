@@ -1,0 +1,183 @@
+openapi: 3.0.0
+info:
+  title: Converted from user.models.yaml with typeconv
+  version: '1'
+  x-id: user.models.yaml
+  x-comment: >-
+    Generated from src/models/user.models.ts by core-types-json-schema
+    (https://github.com/grantila/core-types-json-schema) on behalf of typeconv
+    (https://github.com/grantila/typeconv)
+paths: {}
+components:
+  schemas:
+    GlobalValues:
+      properties:
+        person:
+          properties:
+            objectType:
+              items:
+                title: GlobalValues.person.objectType.[]
+                type: string
+              title: GlobalValues.person.objectType
+              type: array
+            gender:
+              items:
+                title: GlobalValues.person.gender.[]
+                type: string
+              title: GlobalValues.person.gender
+              type: array
+            ethnicity:
+              items:
+                title: GlobalValues.person.ethnicity.[]
+                type: string
+              title: GlobalValues.person.ethnicity
+              type: array
+          required:
+            - objectType
+            - gender
+            - ethnicity
+          additionalProperties: false
+          title: GlobalValues.person
+          type: object
+        location:
+          properties:
+            objectType:
+              items:
+                title: GlobalValues.location.objectType.[]
+                type: string
+              title: GlobalValues.location.objectType
+              type: array
+          required:
+            - objectType
+          additionalProperties: false
+          title: GlobalValues.location
+          type: object
+        event:
+          properties:
+            objectType:
+              items:
+                title: GlobalValues.event.objectType.[]
+                type: string
+              title: GlobalValues.event.objectType
+              type: array
+          required:
+            - objectType
+          additionalProperties: false
+          title: GlobalValues.event
+          type: object
+        object:
+          properties:
+            objectType:
+              items:
+                title: GlobalValues.object.objectType.[]
+                type: string
+              title: GlobalValues.object.objectType
+              type: array
+            purpose:
+              items:
+                title: GlobalValues.object.purpose.[]
+                type: string
+              title: GlobalValues.object.purpose
+              type: array
+          required:
+            - objectType
+            - purpose
+          additionalProperties: false
+          title: GlobalValues.object
+          type: object
+        organization:
+          properties:
+            objectType:
+              items:
+                title: GlobalValues.organization.objectType.[]
+                type: string
+              title: GlobalValues.organization.objectType
+              type: array
+          required:
+            - objectType
+          additionalProperties: false
+          title: GlobalValues.organization
+          type: object
+      required:
+        - person
+        - location
+        - event
+        - object
+        - organization
+      additionalProperties: false
+      title: GlobalValues
+      type: object
+    UserPreferences:
+      properties:
+        globalValues:
+          $ref: '#/components/schemas/GlobalValues'
+          title: UserPreferences.globalValues
+      required:
+        - globalValues
+      additionalProperties: false
+      title: UserPreferences
+      type: object
+    User:
+      properties:
+        id:
+          title: User.id
+          nullable: true
+          type: number
+        enabled:
+          title: User.enabled
+          type: boolean
+        email:
+          title: User.email
+          type: string
+        displayName:
+          title: User.displayName
+          type: string
+        profilePicture:
+          title: User.profilePicture
+          type: string
+        joinedDate:
+          title: User.joinedDate
+          type: string
+        lastActive:
+          title: User.lastActive
+          type: string
+        biography:
+          title: User.biography
+          type: string
+        favorites:
+          items:
+            title: User.favorites.[]
+            type: string
+          title: User.favorites
+          type: array
+        tapestries:
+          items:
+            title: User.tapestries.[]
+            type: string
+          title: User.tapestries
+          type: array
+        sharedTapestries:
+          items:
+            title: User.sharedTapestries.[]
+            type: string
+          title: User.sharedTapestries
+          type: array
+        preferences:
+          $ref: '#/components/schemas/UserPreferences'
+          title: User.preferences
+      required:
+        - id
+        - enabled
+        - email
+        - displayName
+        - profilePicture
+        - joinedDate
+        - lastActive
+        - biography
+        - favorites
+        - tapestries
+        - sharedTapestries
+        - preferences
+      additionalProperties: false
+      title: User
+      type: object

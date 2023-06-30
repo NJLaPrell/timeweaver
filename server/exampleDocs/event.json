@@ -1,0 +1,44 @@
+{
+  "id": "event_123",
+  "title": "Apple Incorporation",
+  "objectType": "Incorporation",
+  "description": "Steve Jobs and Steve Wozniak incorporate Apple Computer, Inc.",
+  "date_range": {
+    "start": "1976-04-01",
+    "end": "1976-04-01"
+  },
+  "linkedElements": [
+    {
+      "id": "org_12345",
+      "linkLabel": "Founding of",
+      "name": "Apple Inc.",
+      "title": "Apple Incorporation",
+      "description": "Apple Inc. is an American multinational technology company",
+      "objectType": "Organization",
+      "location": null
+    },
+    {
+      "id": "person_456",
+      "linkLabel": "Co-founder",
+      "name": "Steve Jobs",
+      "title": "Co-founder of Apple",
+      "description": "Co-founder of Apple Inc. and Pixar",
+      "objectType": "Person",
+      "location": null
+    },
+    {
+      "id": "loc_678",
+      "linkLabel": "Incorporated at",
+      "name": "Cupertino, California",
+      "title": "City of Cupertino",
+      "description": "City in California, USA",
+      "objectType": "Location",
+      "location": {
+        "lat": 37.3229978,
+        "long": -122.0321823
+      }
+    }
+  ],
+  "media_links": ["https://commons.wikimedia.org/wiki/File:Apple_Park_cupertino_2019.jpg"],
+  "citations": ["https://www.apple.com/about/"]
+}

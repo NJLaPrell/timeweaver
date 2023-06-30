@@ -11,7 +11,10 @@ import { cert } from 'firebase-admin/app';
 import { Routes } from './routes';
 import { Logger } from './lib/logger';
 import * as https from 'https';
-const passport = require('passport');
+import swaggerDocs from './apiDoc/swagger';
+import { Application } from 'express';
+import { PassportStatic } from 'passport';
+const passport: PassportStatic = require('passport');
 const session = require('express-session');
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const admin = require('firebase-admin');
@@ -61,7 +64,7 @@ const database = firebase.firestore();
 const FirestoreStore = require('firestore-store')(session);
 
 // Initialize Express
-const app = express();
+const app: Application = express();
 const port = 3000;
 
 app.set('trust proxy', 1);
@@ -173,11 +176,13 @@ if (process.env['SSL_CERT'] && process.env['SSL_KEY'] && process.env['SSL_CA']) 
 
   https.createServer(options, app).listen(port, function () {
     log.info(`Express server listening on port ${port}`);
+    swaggerDocs(app, port);
     log.info(' ');
   });
 } else {
   app.listen(port, () => {
     log.info(`Server listening on port ${port}`);
+    swaggerDocs(app, port);
     log.info(' ');
   });
 }

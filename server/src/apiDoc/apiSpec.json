@@ -1,0 +1,408 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "TimeWeaver API",
+    "version": "1.0",
+    "description": "REST API for server side operations for TimeWeaver.",
+    "contact": {
+      "name": "Nick LaPrell",
+      "email": "njlaprell@gmail.com"
+    },
+    "license": {
+      "name": "MIT License"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://timeweaver-dev.laprell.org"
+    },
+    {
+      "url": "https://timeweaver.laprell.org"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "googleOauth2": {
+        "type": "oauth2",
+        "flows": {
+          "authorizationCode": {
+            "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+            "tokenUrl": "https://oauth2.googleapis.com/token",
+            "scopes": {
+              "profile": "Read the Google profile",
+              "email": "Read the email address."
+            }
+          }
+        }
+      }
+    },
+    "schemas": {
+      "GlobalValues": {
+        "properties": {
+          "person": {
+            "properties": {
+              "objectType": {
+                "items": {
+                  "title": "GlobalValues.person.objectType.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.person.objectType",
+                "type": "array"
+              },
+              "gender": {
+                "items": {
+                  "title": "GlobalValues.person.gender.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.person.gender",
+                "type": "array"
+              },
+              "ethnicity": {
+                "items": {
+                  "title": "GlobalValues.person.ethnicity.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.person.ethnicity",
+                "type": "array"
+              }
+            },
+            "required": [
+              "objectType",
+              "gender",
+              "ethnicity"
+            ],
+            "additionalProperties": false,
+            "title": "GlobalValues.person",
+            "type": "object"
+          },
+          "location": {
+            "properties": {
+              "objectType": {
+                "items": {
+                  "title": "GlobalValues.location.objectType.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.location.objectType",
+                "type": "array"
+              }
+            },
+            "required": [
+              "objectType"
+            ],
+            "additionalProperties": false,
+            "title": "GlobalValues.location",
+            "type": "object"
+          },
+          "event": {
+            "properties": {
+              "objectType": {
+                "items": {
+                  "title": "GlobalValues.event.objectType.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.event.objectType",
+                "type": "array"
+              }
+            },
+            "required": [
+              "objectType"
+            ],
+            "additionalProperties": false,
+            "title": "GlobalValues.event",
+            "type": "object"
+          },
+          "object": {
+            "properties": {
+              "objectType": {
+                "items": {
+                  "title": "GlobalValues.object.objectType.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.object.objectType",
+                "type": "array"
+              },
+              "purpose": {
+                "items": {
+                  "title": "GlobalValues.object.purpose.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.object.purpose",
+                "type": "array"
+              }
+            },
+            "required": [
+              "objectType",
+              "purpose"
+            ],
+            "additionalProperties": false,
+            "title": "GlobalValues.object",
+            "type": "object"
+          },
+          "organization": {
+            "properties": {
+              "objectType": {
+                "items": {
+                  "title": "GlobalValues.organization.objectType.[]",
+                  "type": "string"
+                },
+                "title": "GlobalValues.organization.objectType",
+                "type": "array"
+              }
+            },
+            "required": [
+              "objectType"
+            ],
+            "additionalProperties": false,
+            "title": "GlobalValues.organization",
+            "type": "object"
+          }
+        },
+        "required": [
+          "person",
+          "location",
+          "event",
+          "object",
+          "organization"
+        ],
+        "additionalProperties": false,
+        "title": "GlobalValues",
+        "type": "object"
+      },
+      "UserPreferences": {
+        "properties": {
+          "globalValues": {
+            "$ref": "#/components/schemas/GlobalValues",
+            "title": "UserPreferences.globalValues"
+          }
+        },
+        "required": [
+          "globalValues"
+        ],
+        "additionalProperties": false,
+        "title": "UserPreferences",
+        "type": "object"
+      },
+      "User": {
+        "properties": {
+          "id": {
+            "title": "User.id",
+            "nullable": true,
+            "type": "number"
+          },
+          "enabled": {
+            "title": "User.enabled",
+            "type": "boolean"
+          },
+          "email": {
+            "title": "User.email",
+            "type": "string"
+          },
+          "displayName": {
+            "title": "User.displayName",
+            "type": "string"
+          },
+          "profilePicture": {
+            "title": "User.profilePicture",
+            "type": "string"
+          },
+          "joinedDate": {
+            "title": "User.joinedDate",
+            "type": "string"
+          },
+          "lastActive": {
+            "title": "User.lastActive",
+            "type": "string"
+          },
+          "biography": {
+            "title": "User.biography",
+            "type": "string"
+          },
+          "favorites": {
+            "items": {
+              "title": "User.favorites.[]",
+              "type": "string"
+            },
+            "title": "User.favorites",
+            "type": "array"
+          },
+          "tapestries": {
+            "items": {
+              "title": "User.tapestries.[]",
+              "type": "string"
+            },
+            "title": "User.tapestries",
+            "type": "array"
+          },
+          "sharedTapestries": {
+            "items": {
+              "title": "User.sharedTapestries.[]",
+              "type": "string"
+            },
+            "title": "User.sharedTapestries",
+            "type": "array"
+          },
+          "preferences": {
+            "$ref": "#/components/schemas/UserPreferences",
+            "title": "User.preferences"
+          }
+        },
+        "required": [
+          "id",
+          "enabled",
+          "email",
+          "displayName",
+          "profilePicture",
+          "joinedDate",
+          "lastActive",
+          "biography",
+          "favorites",
+          "tapestries",
+          "sharedTapestries",
+          "preferences"
+        ],
+        "additionalProperties": false,
+        "title": "User",
+        "type": "object"
+      }
+    }
+  },
+  "paths": {
+    "/auth": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Redirect from Google authentication back to the application. Redirects to /.",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "query",
+            "description": "Google authentication code.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "description": "State of the request.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "error",
+            "in": "query",
+            "description": "Error message.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "error_description",
+            "in": "query",
+            "description": "Error description.",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/login": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Redirects to Google authentication.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/test": {
+      "get": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Redirects to Google authentication.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/logout": {
+      "post": {
+        "tags": [
+          "Authentication"
+        ],
+        "summary": "Log the user out.",
+        "parameters": [
+          {
+            "name": "dataDeleted",
+            "in": "query",
+            "description": "Whether the user data should be deleted and the auth token revoked.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/user": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Retrieves the current user",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "googleOauth2": [
+        "profile",
+        "email"
+      ]
+    }
+  ],
+  "tags": []
+}

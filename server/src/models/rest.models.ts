@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 
 export interface ExpressRequest extends Request {
   isAuthenticated(): boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   session: any;
   logout(): void;
   user: AuthUser;

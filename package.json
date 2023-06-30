@@ -4,16 +4,21 @@
   "description": "Arrange people, places, and events on a relational timeline.",
   "main": "index.js",
   "scripts": {
-    "start": "ntl -o -s 10",
+    "menu": "ntl -o -s 10",
+    "start": "npm run start:dev",
+    "stop": "pm2 stop all",
+    "build:dev": "npm-run-all copy-assets build-api-docs build-yaml-spec-from-types",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:dev": "npm-run-all copy-assets start-all watch-logs",
+    "start:dev": "npm-run-all copy-assets build-api-docs build-yaml-spec-from-types start-all watch-logs",
     "watch-logs": "pm2 logs",
     "start-all": "pm2 start",
     "stop-all": "pm2 stop all",
     "copy-assets": "ts-node scripts/copyAssets",
-    "start:dev:rest-server": "ts-node-dev --project ./server/tsconfig.json --respawn --transpile-only -- ./server/src/index.ts",
+    "start:dev:rest-server": "npm run start:dev:rest-server --prefix server",
     "lint": "ng lint --fix",
-    "prettify": "prettier --write ."
+    "prettify": "prettier --write .",
+    "build-api-docs": "npm run build-api-docs --prefix server",
+    "build-yaml-spec-from-types": "npm run build-yaml-spec-from-types --prefix server"
   },
   "ntl": {
     "descriptions": {

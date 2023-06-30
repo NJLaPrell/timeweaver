@@ -1,0 +1,28 @@
+{
+  "id": "tapestry_123",
+  "name": "The Life and Times of Steve Jobs",
+  "description": "An in-depth exploration of the life, achievements, and influences of Steve Jobs, co-founder of Apple Inc.",
+  "owner": {
+    "id": "user_999",
+    "name": "John Doe",
+    "type": "User"
+  },
+  "viewers": [
+    {
+      "id": "user_001",
+      "name": "Jane Smith",
+      "type": "User"
+    },
+    {
+      "id": "user_002",
+      "name": "Bob Johnson",
+      "type": "User"
+    }
+  ],
+  "tags": ["Steve Jobs", "Apple Inc.", "Innovation", "Technology"],
+  "status": "Ongoing",
+  "creationDate": "2023-06-29T12:00:00Z",
+  "lastUpdated": "2023-06-29T12:00:00Z",
+  "image": "https://example.com/images/tapestry_123.jpg",
+  "visibility": "Private"
+}

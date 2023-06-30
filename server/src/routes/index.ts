@@ -1,5 +1,5 @@
 import { AuthenticationRoutes } from './authentication.routes';
-//import { APIRoutes } from './api.routes';
+import { UserRoutes } from './user.routes';
 
 export class Routes {
   app;
@@ -8,7 +8,7 @@ export class Routes {
   ensureGuest;
 
   authRoutes: AuthenticationRoutes = new AuthenticationRoutes();
-  //apiRoutes: APIRoutes = new APIRoutes();
+  userRoutes: UserRoutes = new UserRoutes();
 
   constructor(app: any, passport: any, ensureAuth: any, ensureGuest: any) {
     this.app = app;
@@ -18,6 +18,6 @@ export class Routes {
   }
   public apply = () => {
     this.authRoutes.apply(this.app, this.passport, this.ensureGuest);
-    //this.apiRoutes.apply(this.app, this.ensureAuth);
+    this.userRoutes.apply(this.app, this.ensureAuth);
   };
 }

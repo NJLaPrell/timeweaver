@@ -1,0 +1,28 @@
+{
+  "id": "object_789",
+  "name": "Apple I",
+  "objectType": "Computer",
+  "description": "The first product of Apple Inc., hand-built by Steve Wozniak.",
+  "purpose": "Personal computing",
+  "linkedElements": [
+    {
+      "id": "person_456",
+      "linkLabel": "Sold by",
+      "name": "Steve Jobs",
+      "title": "Co-founder of Apple",
+      "description": "Co-founder of Apple Inc. and Pixar",
+      "objectType": "Person",
+      "location": null
+    },
+    {
+      "id": "org_12345",
+      "linkLabel": "Produced by",
+      "name": "Apple Inc.",
+      "title": "Apple Inc.",
+      "description": "Apple Inc. is an American multinational technology company",
+      "objectType": "Organization",
+      "location": null
+    }
+  ],
+  "media_links": ["https://commons.wikimedia.org/wiki/File:Apple_I_Computer.jpg"]
+}

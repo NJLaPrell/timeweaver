@@ -1,0 +1,34 @@
+{
+  "id": "loc_678",
+  "title": "Cupertino, California",
+  "lat": 37.3229978,
+  "long": -122.0321823,
+  "objectType": "HQ",
+  "periods": [
+    {
+      "title": "Modern Cupertino",
+      "description": "Silicon Valley city known for being the home of Apple Inc.",
+      "start_date": "1976-04-01",
+      "end_date": null,
+      "type": "City",
+      "population": 58202,
+      "climate": "Mediterranean",
+      "ruling_government": "City Council",
+      "media_links": ["https://commons.wikimedia.org/wiki/File:Apple_Park_cupertino_2019.jpg"],
+      "citations": ["https://www.cupertino.org/our-city/about-cupertino/history"]
+    }
+  ],
+  "linkedElements": [
+    {
+      "id": "org_12345",
+      "linkLabel": "Headquarters of",
+      "name": "Apple Inc.",
+      "title": "Apple Inc. Headquarters",
+      "description": "Apple Inc. is an American multinational technology company",
+      "type": "Organization",
+      "location": null
+    }
+  ],
+  "media_links": ["https://commons.wikimedia.org/wiki/File:Apple_Park_cupertino_2019.jpg"],
+  "citations": ["https://www.apple.com/about/"]
+}
